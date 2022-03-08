@@ -8,7 +8,7 @@ import { StatusBar } from 'expo-status-bar';
 
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import Input from './Input';
+//import Input from './Input';
 
 //import MainScreen from '../components/MainScreen';
 //import {Component} from 'react';

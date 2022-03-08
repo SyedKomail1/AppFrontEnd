@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Component} from 'react';
 import {View, Text, SafeAreaView,Image, StyleSheet, Button, ScrollView, Dimensions,} from "react-native";
 import { styles } from "../styles/styles";
-import Input from "./Input";
+//import Input from "./Input";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const {width, height} = Dimensions.get ("screen");
