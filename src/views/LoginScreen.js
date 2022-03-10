@@ -87,6 +87,19 @@ const LoginScreen = ({navigation}) => {
             error={errors.password}
             password
           />
+
+<Text
+            onPress={() => navigation.navigate('ForgetPassword')}
+            style={{
+              color: COLORS.black,
+              fontWeight: 'bold',
+              textAlign: 'left',
+              fontSize: 16,
+            }}>
+            Forget Password
+          </Text>
+
+
           <Button title="Log In" onPress={validate} />
           <Text
             onPress={() => navigation.navigate('RegisterScreen')}

@@ -15,9 +15,9 @@ import DetailsScreen from './src/views/DetailsScreen';
 import Started from './src/views/Started.js';
 import LoginScreen from './src/views/LoginScreen.js';
 import RegisterScreen from './src/views/RegisterScreen';
-
-
-
+import ForgetPassword from './src/views/ForgetPassword';
+import ForgetCode from './src/views/ForgetCode';
+import NewPass from './src/views/NewPass';
 
 const Stack = createNativeStackNavigator();
 
@@ -70,6 +70,30 @@ function App() {
         component={DetailsScreen}
         options={{ title: 'DetailsScreen' }}
       />
+
+<Stack.Screen
+        name="ForgetPassword"
+        component={ForgetPassword}
+        options={{ title: 'ForgetPassword' }}
+      />
+
+<Stack.Screen
+        name="NewPass"
+        component={NewPass}
+        options={{ title: 'NewPass' }}
+      />
+
+
+
+<Stack.Screen
+        name="ForgetCode"
+        component={ForgetCode}
+        options={{ title: 'ForgetCode' }}
+      />
+
+
+
+
 
         <Stack.Screen
         name="Hotelbooking"
