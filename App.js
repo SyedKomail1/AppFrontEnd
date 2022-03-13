@@ -7,7 +7,6 @@ import Home from './components/Home';
 import MainScreen from './components/MainScreen';
 import practice from './components/practice';
 
-import Hotelbooking from './components/Hotelbooking';
 import Tripbooking from './components/Tripbooking';
 import OnBoardScreen from './src/views/OnBoardScreen';
 import HomeScreen from './src/views/HomeScreen';
@@ -18,6 +17,14 @@ import RegisterScreen from './src/views/RegisterScreen';
 import ForgetPassword from './src/views/ForgetPassword';
 import ForgetCode from './src/views/ForgetCode';
 import NewPass from './src/views/NewPass';
+import CreateTour from './src/views/CreateTour';
+import Userprofile from './src/views/Userprofile';
+import Shared from './components/Shared';
+//import Userprofile from './src/views/Userprofile';
+
+
+
+
 
 const Stack = createNativeStackNavigator();
 
@@ -64,6 +71,12 @@ function App() {
         component={RegisterScreen}
         options={{ title: 'RegisterScreen' }}
       />
+
+<Stack.Screen
+        name="Shared"
+        component={Shared}
+        options={{ title: 'Shared' }}
+      />
      
        <Stack.Screen
         name="DetailsScreen"
@@ -91,15 +104,24 @@ function App() {
         options={{ title: 'ForgetCode' }}
       />
 
-
-
-
-
-        <Stack.Screen
-        name="Hotelbooking"
-        component={Hotelbooking}
-        options={{ title: 'Hotel Booking' }}
+<Stack.Screen
+        name="CreateTour"
+        component={CreateTour}
+        options={{ title: 'CreateTour' }}
       />
+
+<Stack.Screen
+        name="Userprofile"
+        component={Userprofile}
+        options={{ title: 'Userprofile' }}
+      />
+
+
+
+
+
+
+      
      <Stack.Screen
         name="Tripbooking"
         component={Tripbooking}

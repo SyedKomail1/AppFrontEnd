@@ -15,6 +15,8 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../consts/colors';
 import places from '../consts/places';
+import Button from '../../components/Button';
+
 const {width} = Dimensions.get('screen');
 const HomeScreen = ({navigation}) => {
   const categoryIcons = [
@@ -156,6 +158,8 @@ const HomeScreen = ({navigation}) => {
             renderItem={({item}) => <RecommendedCard place={item} />}
           />
         </View>
+        <Button title="Create Tour"   onPress={() => navigation.navigate('CreateTour')}
+        />
       </ScrollView>
     </SafeAreaView>
   );

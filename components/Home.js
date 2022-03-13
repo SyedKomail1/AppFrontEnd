@@ -9,7 +9,6 @@ import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 //import Input from '../components/Input';
-import Hotelbooking from '../components/Hotelbooking';
 
 
 import MainScreen from '../components/MainScreen';

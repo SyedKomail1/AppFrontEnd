@@ -46,6 +46,16 @@ color: COLORS.white, fontSize: 35, fontWeight: 'bold'}}>
               <Text style={{fontWeight: 'bold'}}>For Testing go to Home screen</Text>
             </View>
           </TouchableOpacity>
+
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate('Userprofile')}>
+            <View style={style.btn}>
+              <Text style={{fontWeight: 'bold'}}>For User Profile </Text>
+            </View>
+          </TouchableOpacity>
+
+
         </View>
       </ImageBackground>
     </View>
@@ -63,7 +73,7 @@ const style = StyleSheet.create({
     height: 50,
     width: 120,
     backgroundColor: COLORS.white,
-    marginTop: 20,
+    //marginTop: 20,
     borderRadius: 7,
     justifyContent: 'center',
     alignItems: 'center',
