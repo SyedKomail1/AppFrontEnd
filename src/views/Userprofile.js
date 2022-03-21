@@ -1,12 +1,13 @@
 import React from 'react';
 import {View, Text, SafeAreaView, Keyboard, Alert,TouchableOpacity,Image, ScrollView, } from 'react-native';
+import UserAvatar from 'react-native-user-avatar';
+
 import COLORS from '../consts/colors';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Loader from '../../components/Looder';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Shared from '../../components/Shared';
-
 
 
 const UserProfile = ({navigation}) => {
@@ -30,8 +31,8 @@ const UserProfile = ({navigation}) => {
   showsHorizontalScrollIndicator={false}>
              <View style={{padding:10,width: '100%', backgroundColor: COLORS.primary, height:150}}>
                 <TouchableOpacity>
-                    <Image source={require('../../assets/onboardImage3.jpg')}
-                    style={{ width: 30, height:30}}></Image>
+                    {/* <Image source={require('../../assets/onboardImage3.jpg')}
+                    style={{ width: 30, height:80}}></Image> */}
                     <View></View>
                    <View></View>
                 </TouchableOpacity>
@@ -40,13 +41,56 @@ const UserProfile = ({navigation}) => {
               <Image source={require('../../assets/onboardImage3.jpg')} style={{width:170, height:170,
                  borderRadius:100, marginTop:-90, borderWidth: 90,
                  borderColor: "white"}}></Image>
-                  <Image source={require('../../assets/onboardImage3.jpg')} style={{width:170, height:170,
+                       <UserAvatar size={100}  name="User Name"  style={{width:170, height:170,
                  borderRadius:100, marginTop:-175, borderWidth: 7,
-                 borderColor: "white"}}></Image>
-                  <Text style={{fontSize:25, fontWeight: 'bold', padding:10}}>User Name</Text>
+                 borderColor: "white"}}   />
+                  {/* bgColors={['#ccc', '#fafafa', '#ccaabb']} */}
+                  {/* <Image source={require('../../assets/onboardImage3.jpg')} style={{width:170, height:170,
+                 borderRadius:100, marginTop:-175, borderWidth: 7,
+                 borderColor: "white"}}></Image> */}
+                  <Text style={{fontSize:25, fontWeight: 'bold', padding:30, color: 'black',}}>User Name</Text>
                   <Text style={{fontSize:15, fontWeight: 'bold', padding:1, color: 'grey',}}>Role Here</Text>
 
              </View>
+
+             {/* <PhotoUpload
+   onPhotoSelect={avatar => {
+     if (avatar) {
+       console.log('Image base64 string: ', avatar)
+     }
+   }}
+ >
+   <Image
+     style={{
+       paddingVertical: 30,
+       width: 150,
+       height: 150,
+       borderRadius: 75
+     }}
+     resizeMode='cover'
+     source={{
+       uri: 'https://www.sparklabs.com/forum/styles/comboot/theme/images/default_avatar.jpg'
+     }}
+   />
+ </PhotoUpload> */}
+
+
+             <View style={{
+          alignSelf:'center',
+          flexDirection: 'row',
+          justifyContent:'center',
+          backgroundColor: '#fff',
+          width: '90%',
+          padding:20,
+          paddingBottom: 22,
+          borderRadius:10,
+          shadowopacity:80,
+          elevation:15,
+          marginTop:20
+          }}>
+
+      <Text  >Edit Profile</Text>
+</View>
 
              <View style={{
           alignSelf:'center',
@@ -64,6 +108,7 @@ const UserProfile = ({navigation}) => {
 
       <Text  >Company Name</Text>
 </View>
+
 <View style={{
           alignSelf:'center',
           flexDirection: 'row',
@@ -78,12 +123,28 @@ const UserProfile = ({navigation}) => {
           marginTop:20
           }}>
 
-      <Text  >Location</Text>
+      <Text  >Country</Text>
+</View>
+<View style={{
+          alignSelf:'center',
+          flexDirection: 'row',
+          justifyContent:'center',
+          backgroundColor: '#fff',
+          width: '90%',
+          padding:20,
+          paddingBottom: 22,
+          borderRadius:10,
+          shadowopacity:80,
+          elevation:15,
+          marginTop:20
+          }}>
+
+      <Text  >Address</Text>
 </View>
 
             <Shared/>
 
-
+{/* <Countrypicker/> */}
 
 <View style={{
           alignSelf:'center',

@@ -49,7 +49,7 @@ color: COLORS.white, fontSize: 35, fontWeight: 'bold'}}>
 
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('Userprofile')}>
+            onPress={() => navigation.navigate('Booking')}>
             <View style={style.btn}>
               <Text style={{fontWeight: 'bold'}}>For User Profile </Text>
             </View>

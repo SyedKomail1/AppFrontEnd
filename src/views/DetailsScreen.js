@@ -6,6 +6,7 @@ import {
   StyleSheet,
   View,
   Text,
+  TouchableOpacity,ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../consts/colors';
@@ -14,6 +15,7 @@ const DetailsScreen = ({navigation, route}) => {
   const place = route.params;
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
+      
       <StatusBar translucent backgroundColor="rgba(0,0,0,0)" />
       <ImageBackground style={{flex: 0.7}} source={place.image}>
         <View style={style.header}>
@@ -40,7 +42,7 @@ const DetailsScreen = ({navigation, route}) => {
             {place.name}
           </Text>
           <View style={{flexDirection: 'row'}}>
-            <Icon name="star" size={30} color={COLORS.orange} />
+            <Icon name="star" size={30} color={COLORS.white} />
             <Text
               style={{color: COLORS.white, fontWeight: 'bold', fontSize: 20,textShadowColor: 'rgba(0, 0, 0, 0.75)',
               textShadowOffset: {width: -1, height: 1},
@@ -70,7 +72,7 @@ const DetailsScreen = ({navigation, route}) => {
         <Text style={{marginTop: 20, fontWeight: 'bold', fontSize: 20}}>
           About the trip
         </Text>
-        <Text style={{marginTop: 20, lineHeight: 22}}>{place.details}</Text>
+        <Text style={{marginTop: 20, lineHeight: 22,marginBottom: 20}}>{place.details}</Text>
       </View>
       <View style={style.footer}>
         <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
@@ -92,13 +94,24 @@ const DetailsScreen = ({navigation, route}) => {
             /PER DAY
           </Text>
         </View>
-        <View style={style.bookNowBtn}>
+        <View  >
+
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Booking')}
+          style={style.iconContainer1}
+        >
           <Text
-            style={{color: COLORS.primary, fontSize: 16, fontWeight: 'bold'}}>
+            style={{color: COLORS.white, fontSize: 16, fontWeight: 'bold'}}
+            >
             Book Now
+            
           </Text>
+         </TouchableOpacity>
+        
+          
         </View>
       </View>
+      
     </SafeAreaView>
   );
 };
@@ -151,11 +164,17 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: COLORS.primary,
     height: 70,
+    marginTop:20,
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 20,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
+  },
+  iconContainer1: {
+    backgroundColor: "red",
+    flexDirection: 'row',
+    backgroundColor: COLORS.primary,
   },
 });
 

@@ -20,7 +20,14 @@ import NewPass from './src/views/NewPass';
 import CreateTour from './src/views/CreateTour';
 import Userprofile from './src/views/Userprofile';
 import Shared from './components/Shared';
-//import Userprofile from './src/views/Userprofile';
+import Caronboardscreen from './src/views/Caronboardscreen';
+import CarHomeScreen from './src/views/CarHomeScreen';
+import CarDetailsScreen from './src/views/CarDetailsScreen';
+import Booking from './src/views/Booking';
+
+
+
+
 
 
 
@@ -85,6 +92,28 @@ function App() {
       />
 
 <Stack.Screen
+        name="Caronboardscreen"
+        component={Caronboardscreen}
+        options={{ title: 'Caronboardscreen' }}
+      />
+
+<Stack.Screen
+        name="Booking"
+        component={Booking}
+        options={{ title: 'Booking' }}
+      />
+
+
+<Stack.Screen
+        name="CarDetailsScreen"
+        component={CarDetailsScreen}
+        options={{ title: 'CarDetailsScreen' }}
+      />
+
+
+
+
+<Stack.Screen
         name="ForgetPassword"
         component={ForgetPassword}
         options={{ title: 'ForgetPassword' }}
@@ -114,6 +143,12 @@ function App() {
         name="Userprofile"
         component={Userprofile}
         options={{ title: 'Userprofile' }}
+      />
+
+<Stack.Screen
+        name="CarHomeScreen"
+        component={CarHomeScreen}
+        options={{ title: 'CarHomeScreen' }}
       />
 
 

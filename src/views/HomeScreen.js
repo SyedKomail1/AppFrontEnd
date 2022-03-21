@@ -20,10 +20,10 @@ import Button from '../../components/Button';
 const {width} = Dimensions.get('screen');
 const HomeScreen = ({navigation}) => {
   const categoryIcons = [
-    <Icon name="flight" size={25} color={COLORS.primary} />,
+    <Icon name="flight" size={25} color={COLORS.primary}  />,
     <Icon name="beach-access" size={25} color={COLORS.primary} />,
     <Icon name="near-me" size={25} color={COLORS.primary} />,
-    <Icon name="place" size={25} color={COLORS.primary} />,
+    <Icon name="car-rental" size={35} color={COLORS.primary} onPress={() => navigation.navigate('Caronboardscreen')} />,
   ];
   const ListCategories = () => {
     return (
@@ -117,7 +117,7 @@ const HomeScreen = ({navigation}) => {
       <StatusBar translucent={false} backgroundColor={COLORS.primary} />
       <View style={style.header}>
         <Icon name="sort" size={28} color={COLORS.white} />
-        <Icon name="notifications-none" size={28} color={COLORS.white} />
+        <Icon name="notifications-none" size={28} color={COLORS.white}  />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View

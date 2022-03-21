@@ -14,7 +14,6 @@ import COLORS from '../consts/colors';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Loader from '../../components/Looder';
-import DatePicker from '../../components/DatePicker';
 
 const CreateTour = ({navigation}) => {
   const [inputs, setInputs] = React.useState({
@@ -121,27 +120,44 @@ const CreateTour = ({navigation}) => {
             placeholder="Select Date"
             error={errors.phone}
           />
-          <Button title="Open" onPress={() => setOpen(true)} />
+          {/* <Button title="Open" onPress={() => setOpen(true)} /> */}
       
           <Input
-            onChangeText={text => handleOnchange(text, 'password')}
-            onFocus={() => handleError(null, 'password')}
-            iconName="lock-outline"
-            label="Password"
-            placeholder="Enter your password"
-            error={errors.password}
-            password
+            onChangeText={text => handleOnchange(text, 'email')}
+            onFocus={() => handleError(null, 'email')}
+            //iconName="email-outline"
+            label="Passenger"
+            placeholder="Enter Number of Passenger"
+            error={errors.email}
           />
-          <Button title="Register" onPress={validate} />
+
+            <Input
+            onChangeText={text => handleOnchange(text, 'email')}
+            onFocus={() => handleError(null, 'email')}
+            //iconName="email-outline"
+            label="Vehicle Type"
+            placeholder="Vehicle Type"
+            error={errors.email}
+          />
+
+            <Input
+            onChangeText={text => handleOnchange(text, 'email')}
+            onFocus={() => handleError(null, 'email')}
+            //iconName="email-outline"
+            label="Further Information"
+            placeholder="Further Information"
+            error={errors.email}
+          />  
+
+          <Button title="Create" onPress={validate} />
           <Text
-            onPress={() => navigation.navigate('LoginScreen')}
             style={{
-              color: COLORS.black,
+              color: COLORS.grey,
               fontWeight: 'bold',
               textAlign: 'center',
-              fontSize: 16,
+              fontSize: 12,
             }}>
-            Already have account ?Login
+            Click create to get the tour created and visible to Public
           </Text>
         </View>
       </ScrollView>

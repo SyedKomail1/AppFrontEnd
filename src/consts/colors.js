@@ -12,6 +12,15 @@ const COLORS = {
     grey: '#BABBC3',
     light: '#F3F4FB',
     darkBlue: '#7978B5',
+
+      white: '#FFF',
+      dark: '#000',
+      blue: '#5f82e6',
+      red: 'red',
+      tranparent: 'rgba(0,0,0,0)',
+ 
+    
+    
   };
   
   export default COLORS;
