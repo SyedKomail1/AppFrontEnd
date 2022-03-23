@@ -1,3 +1,4 @@
+
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import { Button, View, Text,ScrollView } from 'react-native';
@@ -33,6 +34,7 @@ import Booking from './src/views/Booking';
 
 
 
+
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -56,6 +58,9 @@ function App() {
         options={{ title: 'Home Screen' }}
       />
 
+      
+        
+
 <Stack.Screen
         name="Started"
         component={Started}
@@ -73,6 +78,8 @@ function App() {
         component={LoginScreen}
         options={{ title: 'LoginScreen' }}
       />
+
+
          <Stack.Screen
         name="RegisterScreen"
         component={RegisterScreen}

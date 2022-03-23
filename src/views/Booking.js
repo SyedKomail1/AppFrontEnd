@@ -20,6 +20,7 @@ import COLORS from '../consts/colors';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Loader from '../../components/Looder';
+import { Ionicons } from '@expo/vector-icons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
@@ -90,9 +91,9 @@ const Booking = ({navigation}) => {
           
           style={styles.iconContainer}
         >
-          <Icon
+          <Ionicons
         style={styles.icon}
-        name="credit-card"
+        name="card"
         color={COLORS.white}
         size={20}
       />
@@ -130,7 +131,7 @@ const Booking = ({navigation}) => {
           <Input
             onChangeText={text => handleOnchange(text, 'fullname')}
             onFocus={() => handleError(null, 'fullname')}
-            iconName="account-outline"
+            iconName="person"
             label="Cardholder Name"
             placeholder="Enter Cardholder Name"
             error={errors.fullname}
@@ -139,8 +140,8 @@ const Booking = ({navigation}) => {
           <Input
             onChangeText={text => handleOnchange(text, 'fullname')}
             onFocus={() => handleError(null, 'fullname')}
-            iconName="card-account-details-outline"
-            label="Card Number"
+            iconName="card"
+            label="CardNumber"
             placeholder="Enter your Card Number"
             error={errors.fullname}
           />

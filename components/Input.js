@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, TextInput, StyleSheet} from 'react-native';
 import COLORS from '../src/consts/colors';
+import { Ionicons } from '@expo/vector-icons';
+
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const Input = ({
   label,
@@ -27,7 +29,7 @@ const Input = ({
             alignItems: 'center',
           },
         ]}>
-        <Icon
+        <Ionicons
           name={iconName}
           style={{color: COLORS.darkBlue, fontSize: 22, marginRight: 10}}
         />

@@ -8,8 +8,8 @@ import {
   View,TouchableOpacity,
 } from 'react-native';
 import COLORS from '../consts/colors';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-
+import { Ionicons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 const CarDetailsScreen = ({navigation, route}) => {
   const item = route.params;
 
@@ -27,18 +27,18 @@ const CarDetailsScreen = ({navigation, route}) => {
       />
       <ImageBackground style={style.headerImage} source={item.image}>
         <View style={style.header}>
-          <Icon
-            name="arrow-back-ios"
+          <Ionicons
+            name="arrow-back"
             size={28}
             color={COLORS.white}
             onPress={navigation.goBack}
           />
-          <Icon name="bookmark-border" size={28} color={COLORS.white} />
+          <Icon name="bookmark" size={28} color={COLORS.white} />
         </View>
       </ImageBackground>
       <View>
         <View style={style.iconContainer}>
-          <Icon name="place" color={COLORS.white} size={28} />
+          <Ionicons name="location" color={COLORS.white} size={28} />
         </View>
         <View style={{marginTop: 20, paddingHorizontal: 20}}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
