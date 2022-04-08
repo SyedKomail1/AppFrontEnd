@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -11,71 +11,97 @@ import {
   FlatList,
   Dimensions,
   TouchableOpacity,
-} from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
+} from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 
+import { Fontisto } from "@expo/vector-icons";
 
+import COLORS from "../consts/colors";
+import places from "../consts/places";
+import Button from "../../components/Button";
 
-import COLORS from '../consts/colors';
-import places from '../consts/places';
-import Button from '../../components/Button';
-import Icon from 'react-native-vector-icons/FontAwesome';
-
-
-const {width} = Dimensions.get('screen');
-const HomeScreen = ({navigation}) => {
+const { width } = Dimensions.get("screen");
+const HomeScreen = ({ navigation }) => {
   const categoryIcons = [
-
-
-    <Ionicons name="home" size={25} color={COLORS.primary}  />,
     <Ionicons name="home" size={25} color={COLORS.primary} />,
     <Ionicons name="home" size={25} color={COLORS.primary} />,
-    <Ionicons name="car" size={35} color={COLORS.primary} onPress={() => navigation.navigate('Caronboardscreen')} />,
+    <Fontisto
+      name="persons"
+      size={25}
+      color={COLORS.primary}
+      onPress={() => navigation.navigate("TourguideBoard")}
+    />,
+    <Ionicons
+      name="car"
+      size={35}
+      color={COLORS.primary}
+      onPress={() => navigation.navigate("Caronboardscreen")}
+    />,
+
+    <FontAwesome5
+      name="money-check-alt"
+      size={25}
+      color={COLORS.primary}
+      onPress={() => navigation.navigate("BudgetEstimate")}
+    />,
+    <Ionicons
+      name="md-airplane"
+      size={35}
+      color={COLORS.primary}
+      onPress={() => navigation.navigate("TourPlanner")}
+    />,
   ];
+
   const ListCategories = () => {
     return (
-      <View style={style.categoryContainer}>
-        {categoryIcons.map((icon, index) => (
-          <View key={index} style={style.iconContainer}>
-            {icon}
-          </View>
-        ))}
-      </View>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <View style={style.categoryContainer}>
+          {categoryIcons.map((icon, index) => (
+            <View key={index} style={style.iconContainer}>
+              {icon}
+            </View>
+          ))}
+        </View>
+      </ScrollView>
     );
   };
 
-  const Card = ({place}) => {
+  const Card = ({ place }) => {
     return (
       <TouchableOpacity
         activeOpacity={0.8}
-        onPress={() => navigation.navigate('DetailsScreen', place)}>
+        onPress={() => navigation.navigate("DetailsScreen", place)}
+      >
         <ImageBackground style={style.cardImage} source={place.image}>
           <Text
             style={{
               color: COLORS.white,
               fontSize: 20,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               marginTop: 10,
-            }}>
+            }}
+          >
             {place.name}
           </Text>
           <View
             style={{
               flex: 1,
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-              alignItems: 'flex-end',
-            }}>
-            <View style={{flexDirection: 'row'}}>
+              justifyContent: "space-between",
+              flexDirection: "row",
+              alignItems: "flex-end",
+            }}
+          >
+            <View style={{ flexDirection: "row" }}>
               <Ionicons name="location" size={20} color={COLORS.white} />
-              <Text style={{marginLeft: 5, color: COLORS.white}}>
+              <Text style={{ marginLeft: 5, color: COLORS.white }}>
                 {place.location}
               </Text>
             </View>
-            <View style={{flexDirection: 'row'}}>
+            <View style={{ flexDirection: "row" }}>
               <Ionicons name="star" size={20} color={COLORS.white} />
-              <Text style={{marginLeft: 5, color: COLORS.white}}>5.0</Text>
+              <Text style={{ marginLeft: 5, color: COLORS.white }}>5.0</Text>
             </View>
           </View>
         </ImageBackground>
@@ -83,39 +109,41 @@ const HomeScreen = ({navigation}) => {
     );
   };
 
-  const RecommendedCard = ({place}) => {
+  const RecommendedCard = ({ place }) => {
     return (
       <ImageBackground style={style.rmCardImage} source={place.image}>
         <Text
           style={{
             color: COLORS.white,
             fontSize: 22,
-            fontWeight: 'bold',
+            fontWeight: "bold",
             marginTop: 10,
-          }}>
+          }}
+        >
           {place.name}
         </Text>
         <View
           style={{
             flex: 1,
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
-          }}>
-          <View style={{width: '100%', flexDirection: 'row', marginTop: 10}}>
-            <View style={{flexDirection: 'row'}}>
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+          }}
+        >
+          <View style={{ width: "100%", flexDirection: "row", marginTop: 10 }}>
+            <View style={{ flexDirection: "row" }}>
               <Ionicons name="location" size={22} color={COLORS.white} />
-              <Text style={{color: COLORS.white, marginLeft: 5}}>
+              <Text style={{ color: COLORS.white, marginLeft: 5 }}>
                 {place.location}
               </Text>
             </View>
-            <View style={{flexDirection: 'row'}}>
-            <View style={{marginLeft: 10}}>
-              <Ionicons name="star" size={22}    color={COLORS.white} />
+            <View style={{ flexDirection: "row" }}>
+              <View style={{ marginLeft: 10 }}>
+                <Ionicons name="star" size={22} color={COLORS.white} />
               </View>
-              <Text style={{color: COLORS.white, marginLeft: 5}}>5.0</Text>
+              <Text style={{ color: COLORS.white, marginLeft: 5 }}>5.0</Text>
             </View>
           </View>
-          <Text style={{color: COLORS.white, fontSize: 13}}>
+          <Text style={{ color: COLORS.white, fontSize: 13 }}>
             {place.details}
           </Text>
         </View>
@@ -123,11 +151,11 @@ const HomeScreen = ({navigation}) => {
     );
   };
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <StatusBar translucent={false} backgroundColor={COLORS.primary} />
       <View style={style.header}>
         <FontAwesome name="bars" size={28} color={COLORS.white} />
-        <Ionicons name="notifications" size={28} color={COLORS.white}  />
+        <Ionicons name="notifications" size={28} color={COLORS.white} />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View
@@ -135,15 +163,16 @@ const HomeScreen = ({navigation}) => {
             backgroundColor: COLORS.primary,
             height: 120,
             paddingHorizontal: 20,
-          }}>
-          <View style={{flex: 1}}>
+          }}
+        >
+          <View style={{ flex: 1 }}>
             <Text style={style.headerTitle}>Explore the</Text>
             <Text style={style.headerTitle}>beautiful places</Text>
             <View style={style.inputContainer}>
               <Ionicons name="search" size={28} />
               <TextInput
                 placeholder="Search place"
-                style={{color: COLORS.grey}}
+                style={{ color: COLORS.grey }}
               />
             </View>
           </View>
@@ -152,23 +181,25 @@ const HomeScreen = ({navigation}) => {
         <Text style={style.sectionTitle}>Places</Text>
         <View>
           <FlatList
-            contentContainerStyle={{paddingLeft: 20}}
+            contentContainerStyle={{ paddingLeft: 20 }}
             horizontal
             showsHorizontalScrollIndicator={false}
             data={places}
-            renderItem={({item}) => <Card place={item} />}
+            renderItem={({ item }) => <Card place={item} />}
           />
           <Text style={style.sectionTitle}>Recommended</Text>
           <FlatList
             snapToInterval={width - 20}
-            contentContainerStyle={{paddingLeft: 20, paddingBottom: 20}}
+            contentContainerStyle={{ paddingLeft: 20, paddingBottom: 20 }}
             showsHorizontalScrollIndicator={false}
             horizontal
             data={places}
-            renderItem={({item}) => <RecommendedCard place={item} />}
+            renderItem={({ item }) => <RecommendedCard place={item} />}
           />
         </View>
-        <Button title="Create Tour"   onPress={() => navigation.navigate('CreateTour')}
+        <Button
+          title="Create Tour"
+          onPress={() => navigation.navigate("CreateTour")}
         />
       </ScrollView>
     </SafeAreaView>
@@ -179,45 +210,47 @@ const style = StyleSheet.create({
   header: {
     paddingVertical: 20,
     paddingHorizontal: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     backgroundColor: COLORS.primary,
   },
   headerTitle: {
     color: COLORS.white,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 23,
   },
   inputContainer: {
     height: 60,
-    width: '100%',
+    width: "100%",
     backgroundColor: COLORS.white,
     borderRadius: 10,
-    position: 'absolute',
+    position: "absolute",
     top: 90,
-    flexDirection: 'row',
+    flexDirection: "row",
     paddingHorizontal: 20,
-    alignItems: 'center',
+    alignItems: "center",
     elevation: 12,
   },
   categoryContainer: {
     marginTop: 60,
-    marginHorizontal: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+
+    marginHorizontal: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   iconContainer: {
     height: 60,
     width: 60,
+    marginRight: 18,
     backgroundColor: COLORS.secondary,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     borderRadius: 10,
   },
   sectionTitle: {
     marginHorizontal: 20,
     marginVertical: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 20,
   },
   cardImage: {
@@ -225,7 +258,7 @@ const style = StyleSheet.create({
     width: width / 2,
     marginRight: 20,
     padding: 10,
-    overflow: 'hidden',
+    overflow: "hidden",
     borderRadius: 10,
   },
   rmCardImage: {
@@ -233,7 +266,7 @@ const style = StyleSheet.create({
     height: 200,
     marginRight: 20,
     borderRadius: 10,
-    overflow: 'hidden',
+    overflow: "hidden",
     padding: 10,
   },
 });
