@@ -23,6 +23,7 @@ import places from "../consts/places";
 import Button from "../../components/Button";
 
 const { width } = Dimensions.get("screen");
+
 const HomeScreen = ({ navigation }) => {
   const categoryIcons = [
     <Ionicons name="home" size={25} color={COLORS.primary} />,

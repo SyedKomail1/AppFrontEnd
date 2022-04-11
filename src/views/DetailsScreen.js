@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   ImageBackground,
   SafeAreaView,
@@ -6,18 +6,18 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableOpacity,ScrollView,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import COLORS from '../consts/colors';
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
+import Icon from "react-native-vector-icons/MaterialIcons";
+import COLORS from "../consts/colors";
 
-const DetailsScreen = ({navigation, route}) => {
+const DetailsScreen = ({ navigation, route }) => {
   const place = route.params;
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
-      
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <StatusBar translucent backgroundColor="rgba(0,0,0,0)" />
-      <ImageBackground style={{flex: 0.7}} source={place.image}>
+      <ImageBackground style={{ flex: 0.7 }} source={place.image}>
         <View style={style.header}>
           <Icon
             name="arrow-back-ios"
@@ -30,23 +30,30 @@ const DetailsScreen = ({navigation, route}) => {
         <View style={style.imageDetails}>
           <Text
             style={{
-              width: '70%',
+              width: "70%",
               fontSize: 30,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               color: COLORS.white,
               marginBottom: 20,
-              textShadowColor: 'rgba(0, 0, 0, 0.75)',
-              textShadowOffset: {width: -1, height: 1},
-              textShadowRadius: 10
-            }}>
+              textShadowColor: "rgba(0, 0, 0, 0.75)",
+              textShadowOffset: { width: -1, height: 1 },
+              textShadowRadius: 10,
+            }}
+          >
             {place.name}
           </Text>
-          <View style={{flexDirection: 'row'}}>
+          <View style={{ flexDirection: "row" }}>
             <Icon name="star" size={30} color={COLORS.white} />
             <Text
-              style={{color: COLORS.white, fontWeight: 'bold', fontSize: 20,textShadowColor: 'rgba(0, 0, 0, 0.75)',
-              textShadowOffset: {width: -1, height: 1},
-              textShadowRadius: 10}}>
+              style={{
+                color: COLORS.white,
+                fontWeight: "bold",
+                fontSize: 20,
+                textShadowColor: "rgba(0, 0, 0, 0.75)",
+                textShadowOffset: { width: -1, height: 1 },
+                textShadowRadius: 10,
+              }}
+            >
               5.0
             </Text>
           </View>
@@ -56,62 +63,61 @@ const DetailsScreen = ({navigation, route}) => {
         <View style={style.iconContainer}>
           <Icon name="favorite" color={COLORS.red} size={30} />
         </View>
-        <View style={{flexDirection: 'row', marginTop: 10}}>
+        <View style={{ flexDirection: "row", marginTop: 10 }}>
           <Icon name="place" size={28} color={COLORS.primary} />
           <Text
             style={{
               marginLeft: 5,
               fontSize: 20,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               color: COLORS.primary,
-              
-            }}>
+            }}
+          >
             {place.location}
           </Text>
         </View>
-        <Text style={{marginTop: 20, fontWeight: 'bold', fontSize: 20}}>
+        <Text style={{ marginTop: 20, fontWeight: "bold", fontSize: 20 }}>
           About the trip
         </Text>
-        <Text style={{marginTop: 20, lineHeight: 22,marginBottom: 20}}>{place.details}</Text>
+        <Text style={{ marginTop: 20, lineHeight: 22, marginBottom: 20 }}>
+          {place.details}
+        </Text>
       </View>
       <View style={style.footer}>
-        <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+        <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
           <Text
             style={{
               fontSize: 18,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               color: COLORS.white,
-            }}>
+            }}
+          >
             $100
           </Text>
           <Text
             style={{
               fontSize: 12,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               color: COLORS.grey,
               marginLeft: 2,
-            }}>
+            }}
+          >
             /PER DAY
           </Text>
         </View>
-        <View  >
-
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Booking')}
-          style={style.iconContainer1}
-        >
-          <Text
-            style={{color: COLORS.white, fontSize: 16, fontWeight: 'bold'}}
+        <View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Booking")}
+            style={style.iconContainer1}
+          >
+            <Text
+              style={{ color: COLORS.white, fontSize: 16, fontWeight: "bold" }}
             >
-            Book Now
-            
-          </Text>
-         </TouchableOpacity>
-        
-          
+              Book Now
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
-      
     </SafeAreaView>
   );
 };
@@ -121,21 +127,21 @@ const style = StyleSheet.create({
     width: 150,
     backgroundColor: COLORS.white,
     borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   iconContainer: {
     height: 60,
     width: 60,
-    position: 'absolute',
+    position: "absolute",
     top: -30,
     backgroundColor: COLORS.white,
     borderRadius: 30,
     right: 20,
     elevation: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   detailsContainer: {
     top: -30,
@@ -148,32 +154,32 @@ const style = StyleSheet.create({
   },
   header: {
     marginTop: 60,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     paddingHorizontal: 20,
   },
   imageDetails: {
     padding: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-    position: 'absolute',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+    position: "absolute",
     bottom: 30,
   },
   footer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     backgroundColor: COLORS.primary,
     height: 70,
-    marginTop:20,
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    marginTop: 20,
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: 20,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
   },
   iconContainer1: {
     backgroundColor: "red",
-    flexDirection: 'row',
+    flexDirection: "row",
     backgroundColor: COLORS.primary,
   },
 });
