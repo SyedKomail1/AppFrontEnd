@@ -1,9 +1,16 @@
-import React from 'react';
-import {View, SafeAreaView, Image, Text, StyleSheet,ScrollView} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import COLORS from '../consts/colors';
+import React from "react";
+import {
+  View,
+  SafeAreaView,
+  Image,
+  Text,
+  StyleSheet,
+  ScrollView,
+} from "react-native";
+import Icon from "react-native-vector-icons/MaterialIcons";
+import COLORS from "../consts/colors";
 
-const TourGuideDetails = ({navigation, route}) => {
+const TourGuideDetails = ({ navigation, route }) => {
   const guide = route.params;
 
   return (
@@ -11,70 +18,86 @@ const TourGuideDetails = ({navigation, route}) => {
       style={{
         flex: 1,
         backgroundColor: COLORS.white,
-      }}>
+      }}
+    >
       <View style={style.header}>
         <Icon name="arrow-back" size={28} onPress={() => navigation.goBack()} />
         <Icon name="shopping-cart" size={28} />
       </View>
       <View style={style.imageContainer}>
-        <Image source={guide.img} style={{resizeMode: 'center',width: '100%',paddingBottom: 20,flex: 1}} />
+        <Image
+          source={guide.img}
+          style={{
+            resizeMode: "center",
+            width: "100%",
+            paddingBottom: 20,
+            flex: 1,
+          }}
+        />
       </View>
       <View style={style.detailsContainer}>
         <ScrollView>
-        <View
-          style={{
-            marginLeft: 20,
-            flexDirection: 'row',
-            alignItems: 'flex-end',
-          }}>
-        </View>
-        <View
-          style={{
-            marginLeft: 20,
-            marginTop: 20,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}>
-          <Text style={{fontSize: 22, fontWeight: 'bold'}}>{guide.name}</Text>
-          <View style={style.priceTag}>
-            <Text
-              style={{
-                marginLeft: 15,
-                color: COLORS.white,
-                fontWeight: 'bold',
-                fontSize: 16,
-              }}>
-              ${guide.price}
-            </Text>
-          </View>
-        </View>
-        <View style={{paddingHorizontal: 20, marginTop: 10}}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>About</Text>
-          <Text
-            style={{
-              color: 'grey',
-              fontSize: 16,
-              //lineHeight: 22,
-              marginTop: 6,
-            }}>
-            {guide.about}
-          </Text>
           <View
             style={{
+              marginLeft: 20,
+              flexDirection: "row",
+              alignItems: "flex-end",
+            }}
+          ></View>
+          <View
+            style={{
+              marginLeft: 20,
               marginTop: 20,
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-            }}>
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontSize: 22, fontWeight: "bold" }}>
+              {guide.name}
+            </Text>
+            <View style={style.priceTag}>
+              <Text
+                style={{
+                  marginLeft: 15,
+                  color: COLORS.white,
+                  fontWeight: "bold",
+                  fontSize: 16,
+                }}
+              >
+                ${guide.price}
+              </Text>
+            </View>
+          </View>
+          <View style={{ paddingHorizontal: 20, marginTop: 10 }}>
+            <Text style={{ fontSize: 20, fontWeight: "bold" }}>About</Text>
+            <Text
+              style={{
+                color: "grey",
+                fontSize: 16,
+                //lineHeight: 22,
+                marginTop: 6,
+              }}
+            >
+              {guide.about}
+            </Text>
             <View
               style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}>
-              {/* <View style={style.borderBtn}>
+                marginTop: 20,
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                {/* <View style={style.borderBtn}>
                 <Text style={style.borderBtnText}>-</Text>
               </View> */}
-              {/* <Text
+                {/* <Text
                 style={{
                   fontSize: 20,
                   marginHorizontal: 10,
@@ -85,18 +108,22 @@ const TourGuideDetails = ({navigation, route}) => {
               <View style={style.borderBtn}>
                 <Text style={style.borderBtnText}>+</Text>
               </View> */}
-            </View>
+              </View>
 
-            <View style={style.buyBtn}>
-              <Text
-                style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
-                Buy
-              </Text>
+              <View style={style.buyBtn}>
+                <Text
+                  style={{
+                    color: COLORS.white,
+                    fontSize: 18,
+                    fontWeight: "bold",
+                  }}
+                >
+                  Hire
+                </Text>
+              </View>
             </View>
           </View>
-        </View>
         </ScrollView>
-
       </View>
     </SafeAreaView>
   );
@@ -106,14 +133,14 @@ const style = StyleSheet.create({
   header: {
     paddingHorizontal: 20,
     marginTop: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   imageContainer: {
     flex: 1,
     marginTop: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   detailsContainer: {
     flex: 1,
@@ -132,28 +159,28 @@ const style = StyleSheet.create({
     marginRight: 3,
   },
   borderBtn: {
-    borderColor: 'grey',
+    borderColor: "grey",
     borderWidth: 1,
     borderRadius: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     width: 60,
     height: 40,
   },
-  borderBtnText: {fontWeight: 'bold', fontSize: 28},
+  borderBtnText: { fontWeight: "bold", fontSize: 28 },
   buyBtn: {
     width: 130,
     height: 50,
     backgroundColor: COLORS.green,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     borderRadius: 30,
   },
   priceTag: {
     backgroundColor: COLORS.green,
     width: 80,
     height: 40,
-    justifyContent: 'center',
+    justifyContent: "center",
     borderTopLeftRadius: 25,
     borderBottomLeftRadius: 25,
   },

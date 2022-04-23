@@ -142,7 +142,7 @@ const TourGuide = ({ navigation }) => {
           <Text
             style={{ fontSize: 38, color: COLORS.green, fontWeight: "bold" }}
           >
-            guide Shop
+            Hire a Guide
           </Text>
         </View>
         <Icon name="shopping-cart" size={28} />

@@ -39,11 +39,9 @@ const TourguideBoard = ({ navigation }) => {
         </View>
 
         {/* Text container */}
-        <View style={{ marginTop: 10 }}>
-          <Text style={style.textStyle}>
-            Schedule visits in just a few clicks
-          </Text>
-          <Text style={style.textStyle}>visit in just a few clicks</Text>
+        <View style={{ margin: 15 }}>
+          <Text style={style.textStyle}>Are you looking for a guide</Text>
+          <Text style={style.textStyle}>You are at right place</Text>
         </View>
       </View>
 

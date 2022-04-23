@@ -6,6 +6,7 @@ import Tripbooking from "../components/Tripbooking";
 import OnBoardScreen from "../src/views/OnBoardScreen";
 import HomeScreen from "../src/views/HomeScreen";
 import DetailsScreen from "../src/views/DetailsScreen";
+
 import Started from "../src/views/Started.js";
 import LoginScreen from "../src/views/LoginScreen.js";
 import RegisterScreen from "../src/views/RegisterScreen";
@@ -25,12 +26,23 @@ import TourguideBoard from "../src/views/TourguideBoard";
 import TourguideFind from "../src/views/TourguideFind";
 import BudgetEstimate from "../src/views/BudgetEstimate";
 import TourPlanner from "../src/views/TourPlanner";
+import TopToursScreen from "../src/views/TopToursScreen";
+import TopTours from "../src/views/TopTours";
+import TopTours1 from "../src/views/TopTours1";
+import TopTours2 from "../src/views/TopTours2";
+import BudgetEstimateBoard from "../src/views/BudgetEstimateBoard";
+import TourPlannerBoard from "../src/views/TourPlannerBoard";
+import Category1 from "../src/views/Category1";
+import Category2 from "../src/views/Category2";
+import Category3 from "../src/views/Category3";
+import Category4 from "../src/views/Category4";
+
 const Drawer = createDrawerNavigator();
 
 function Drawernev() {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={OnBoardScreen} />
+      <Drawer.Screen name="OnBoardScreen" component={OnBoardScreen} />
 
       <Drawer.Screen name="TourGuide" component={TourGuide} />
 
@@ -51,6 +63,25 @@ function Drawernev() {
       <Drawer.Screen name="RegisterScreen" component={RegisterScreen} />
 
       <Drawer.Screen name="Shared" component={Shared} />
+
+      <Drawer.Screen name="TopToursScreen" component={TopToursScreen} />
+
+      <Drawer.Screen name="TopTours" component={TopTours} />
+
+      <Drawer.Screen name="TourPlannerBoard" component={TourPlannerBoard} />
+
+      <Drawer.Screen name="TopTours1" component={TopTours1} />
+      <Drawer.Screen name="TopTours2" component={TopTours2} />
+
+      <Drawer.Screen name="Category1" component={Category1} />
+      <Drawer.Screen name="Category2" component={Category2} />
+      <Drawer.Screen name="Category3" component={Category3} />
+      <Drawer.Screen name="Category4" component={Category4} />
+
+      <Drawer.Screen
+        name="BudgetEstimateBoard"
+        component={BudgetEstimateBoard}
+      />
 
       <Drawer.Screen
         name="DetailsScreen"

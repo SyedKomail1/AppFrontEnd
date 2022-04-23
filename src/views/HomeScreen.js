@@ -20,14 +20,27 @@ import { Fontisto } from "@expo/vector-icons";
 
 import COLORS from "../consts/colors";
 import places from "../consts/places";
+import cars from "../consts/cars";
+import TopToursScreen from "./TopToursScreen.js";
+import TopTours from "./TopTours.js";
+import TopTours1 from "./TopTours1.js";
+import TopTours2 from "./TopTours2.js";
+import Category1 from "./Category1.js";
+import Category2 from "./Category2.js";
+import Category3 from "./Category3.js";
+import Category4 from "./Category4.js";
+
 import Button from "../../components/Button";
 
 const { width } = Dimensions.get("screen");
-
 const HomeScreen = ({ navigation }) => {
   const categoryIcons = [
-    <Ionicons name="home" size={25} color={COLORS.primary} />,
-    <Ionicons name="home" size={25} color={COLORS.primary} />,
+    <Ionicons
+      name="home"
+      size={25}
+      color={COLORS.primary}
+      onPress={() => navigation.navigate("OnBoardScreen")}
+    />,
     <Fontisto
       name="persons"
       size={25}
@@ -45,13 +58,13 @@ const HomeScreen = ({ navigation }) => {
       name="money-check-alt"
       size={25}
       color={COLORS.primary}
-      onPress={() => navigation.navigate("BudgetEstimate")}
+      onPress={() => navigation.navigate("BudgetEstimateBoard")}
     />,
     <Ionicons
       name="md-airplane"
       size={35}
       color={COLORS.primary}
-      onPress={() => navigation.navigate("TourPlanner")}
+      onPress={() => navigation.navigate("TourPlannerBoard")}
     />,
   ];
 
@@ -69,13 +82,13 @@ const HomeScreen = ({ navigation }) => {
     );
   };
 
-  const Card = ({ place }) => {
+  const Card1 = ({ place }) => {
     return (
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() => navigation.navigate("DetailsScreen", place)}
       >
-        <ImageBackground style={style.cardImage} source={place.image}>
+        <ImageBackground style={style.cardImage1} source={place.image}>
           <Text
             style={{
               color: COLORS.white,
@@ -155,7 +168,13 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <StatusBar translucent={false} backgroundColor={COLORS.primary} />
       <View style={style.header}>
-        <FontAwesome name="bars" size={28} color={COLORS.white} />
+        <Ionicons
+          name="person"
+          size={28}
+          color={COLORS.white}
+          onPress={() => navigation.navigate("Userprofile")}
+        />
+
         <Ionicons name="notifications" size={28} color={COLORS.white} />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -179,24 +198,174 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
         <ListCategories />
-        <Text style={style.sectionTitle}>Places</Text>
+
+        <Text
+          style={{
+            fontWeight: "bold",
+            color: COLORS.black,
+            fontWeight: "bold",
+            fontSize: 20,
+            margin: 20,
+          }}
+        >
+          Categories
+        </Text>
+
+        <Category1 />
+        <TouchableOpacity onPress={() => navigation.navigate("TourguideBoard")}>
+          <Text
+            style={{
+              fontWeight: "bold",
+              color: COLORS.primary,
+              fontWeight: "bold",
+              fontSize: 20,
+              marginLeft: 30,
+
+              marginBottom: 30,
+            }}
+          >
+            Hire a Tour Guide
+          </Text>
+        </TouchableOpacity>
+        <Category2 />
+        <TouchableOpacity onPress={() => navigation.navigate("TourguideBoard")}>
+          <Text
+            style={{
+              fontWeight: "bold",
+              color: COLORS.primary,
+              fontWeight: "bold",
+              fontSize: 20,
+              marginLeft: 30,
+
+              marginBottom: 30,
+            }}
+          >
+            Rent a Vehicle
+          </Text>
+        </TouchableOpacity>
+        <Category3 />
+        <TouchableOpacity onPress={() => navigation.navigate("TourguideBoard")}>
+          <Text
+            style={{
+              fontWeight: "bold",
+              color: COLORS.primary,
+              fontWeight: "bold",
+              fontSize: 20,
+              marginLeft: 30,
+
+              marginBottom: 30,
+            }}
+          >
+            Estimate Your Budget
+          </Text>
+        </TouchableOpacity>
+        <Category4 />
+
+        <TouchableOpacity onPress={() => navigation.navigate("TourguideBoard")}>
+          <Text
+            style={{
+              fontWeight: "bold",
+              color: COLORS.primary,
+              fontWeight: "bold",
+              fontSize: 20,
+              marginLeft: 30,
+
+              marginBottom: 30,
+            }}
+          >
+            Get your Tour Planned
+          </Text>
+        </TouchableOpacity>
+
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginHorizontal: 20,
+            paddingTop: 20,
+            paddingBottom: 20,
+          }}
+        >
+          <Text
+            style={{
+              fontWeight: "bold",
+              color: COLORS.black,
+              fontWeight: "bold",
+              fontSize: 20,
+            }}
+          >
+            Top Tours
+          </Text>
+          <View style={style.container}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("TopToursScreen")}
+            >
+              <Text style={style.textPart2}>Show All</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
         <View>
-          <FlatList
-            contentContainerStyle={{ paddingLeft: 20 }}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            data={places}
-            renderItem={({ item }) => <Card place={item} />}
-          />
-          <Text style={style.sectionTitle}>Recommended</Text>
-          <FlatList
-            snapToInterval={width - 20}
-            contentContainerStyle={{ paddingLeft: 20, paddingBottom: 20 }}
-            showsHorizontalScrollIndicator={false}
-            horizontal
-            data={places}
-            renderItem={({ item }) => <RecommendedCard place={item} />}
-          />
+          <TopTours />
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginHorizontal: 20,
+              paddingTop: 20,
+              paddingBottom: 20,
+            }}
+          >
+            <Text
+              style={{
+                fontWeight: "bold",
+                color: COLORS.black,
+                fontWeight: "bold",
+                fontSize: 20,
+              }}
+            >
+              Low Cost Tours
+            </Text>
+            <View style={style.container}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("TopToursScreen")}
+              >
+                <Text style={style.textPart2}>Show All</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <TopTours1 />
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginHorizontal: 20,
+              paddingTop: 20,
+              paddingBottom: 20,
+            }}
+          >
+            <Text
+              style={{
+                fontWeight: "bold",
+                color: COLORS.black,
+                fontWeight: "bold",
+                fontSize: 20,
+              }}
+            >
+              Recommended
+            </Text>
+            <View style={style.container}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("TopToursScreen")}
+              >
+                <Text style={style.textPart2}>Show All</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <TopTours2 />
         </View>
         <Button
           title="Create Tour"
@@ -219,6 +388,12 @@ const style = StyleSheet.create({
     color: COLORS.white,
     fontWeight: "bold",
     fontSize: 23,
+  },
+  textPart2: {
+    color: COLORS.grey,
+
+    fontSize: 16,
+    // textDecorationLine: 'underline',
   },
   inputContainer: {
     height: 60,
@@ -255,6 +430,14 @@ const style = StyleSheet.create({
     fontSize: 20,
   },
   cardImage: {
+    height: 320,
+    width: width / 2,
+    marginRight: 20,
+    padding: 10,
+    overflow: "hidden",
+    borderRadius: 10,
+  },
+  cardImage1: {
     height: 220,
     width: width / 2,
     marginRight: 20,

@@ -28,6 +28,8 @@ import TourguideBoard from "../src/views/TourguideBoard";
 import TourguideFind from "../src/views/TourguideFind";
 import BudgetEstimate from "../src/views/BudgetEstimate";
 import TourPlanner from "../src/views/TourPlanner";
+import TopToursScreen from "../src/views/TopToursScreen";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -61,6 +63,14 @@ function Snev() {
         component={Started}
         options={{ title: "Started" }}
       />
+
+<Stack.Screen
+        name="TopToursScreen"
+        component={TopToursScreen}
+        options={{ title: "TopToursScreen" }}
+      />
+
+      
 
       <Stack.Screen
         name="HomeScreen"
