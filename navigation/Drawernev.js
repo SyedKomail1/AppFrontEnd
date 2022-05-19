@@ -36,6 +36,10 @@ import Category1 from "../src/views/Category1";
 import Category2 from "../src/views/Category2";
 import Category3 from "../src/views/Category3";
 import Category4 from "../src/views/Category4";
+import Contact from "../src/views/Contact";
+import Review from "../src/views/Review";
+
+import About from "../src/views/About";
 
 const Drawer = createDrawerNavigator();
 
@@ -110,6 +114,12 @@ function Drawernev() {
       <Drawer.Screen name="Userprofile" component={Userprofile} />
 
       <Drawer.Screen name="CarHomeScreen" component={CarHomeScreen} />
+
+      <Drawer.Screen name="Contact" component={Contact} />
+
+      <Drawer.Screen name="Review" component={Review} />
+
+      <Drawer.Screen name="About" component={About} />
 
       <Drawer.Screen name="Tripbooking" component={Tripbooking} />
     </Drawer.Navigator>

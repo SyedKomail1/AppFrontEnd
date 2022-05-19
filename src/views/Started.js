@@ -1,47 +1,51 @@
-import React from 'react';
-import { View,
+import React from "react";
+import {
+  View,
   StyleSheet,
   ImageBackground,
   StatusBar,
-  Text,Button,
+  Text,
+  Button,
   TouchableOpacity,
-} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import COLORS from '../consts/colors';
+} from "react-native";
+import { Colors } from "react-native/Libraries/NewAppScreen";
+import COLORS from "../consts/colors";
 
-const Started = ({navigation}) => {
+const Started = ({ navigation }) => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <StatusBar translucent backgroundColor="rgba(0,0,0,0)" />
       <ImageBackground
-        style={{flex: 1}}
-        source={require('../../assets/back1.jpg')}>
+        style={{ flex: 1 }}
+        source={require("../../assets/back1234.jpg")}
+      >
         <View style={style.details}>
-          
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('LoginScreen')}>
+            onPress={() => navigation.navigate("LoginScreen")}
+          >
             <View style={style.btn}>
-              <Text style={{fontWeight: 'bold'}}>Login</Text>
+              <Text style={{ fontWeight: "bold" }}>Login</Text>
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('RegisterScreen')}>
+            onPress={() => navigation.navigate("RegisterScreen")}
+          >
             <View style={style.btn}>
-              <Text style={{fontWeight: 'bold'}}>Register</Text>
+              <Text style={{ fontWeight: "bold" }}>Register</Text>
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.goBack()}>
+            onPress={() => navigation.goBack()}
+          >
             <View style={style.btn}>
-              <Text style={{fontWeight: 'bold'}}>Go Back</Text>
+              <Text style={{ fontWeight: "bold" }}>Go Back</Text>
             </View>
           </TouchableOpacity>
-
         </View>
       </ImageBackground>
     </View>
@@ -50,9 +54,9 @@ const Started = ({navigation}) => {
 
 const style = StyleSheet.create({
   details: {
-    height: '50%',
+    height: "50%",
     bottom: 0,
-    position: 'absolute',
+    position: "absolute",
     paddingHorizontal: 40,
   },
   btn: {
@@ -61,8 +65,8 @@ const style = StyleSheet.create({
     backgroundColor: COLORS.white,
     marginTop: 20,
     borderRadius: 7,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 export default Started;

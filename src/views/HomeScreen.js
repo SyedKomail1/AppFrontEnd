@@ -371,6 +371,15 @@ const HomeScreen = ({ navigation }) => {
           title="Create Tour"
           onPress={() => navigation.navigate("CreateTour")}
         />
+
+        <Button
+          title="Contact us"
+          onPress={() => navigation.navigate("Contact")}
+        />
+
+        <Button title="About" onPress={() => navigation.navigate("About")} />
+
+        <Button title="Review" onPress={() => navigation.navigate("Review")} />
       </ScrollView>
     </SafeAreaView>
   );
