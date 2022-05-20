@@ -39,6 +39,9 @@ import Category4 from "../src/views/Category4";
 import Contact from "../src/views/Contact";
 import Review from "../src/views/Review";
 
+import AgencyHomeScreen from "../src/views/AgencyHomeScreen";
+import TgHomeScreen from "../src/views/TgHomeScreen";
+
 import About from "../src/views/About";
 
 const Drawer = createDrawerNavigator();
@@ -120,6 +123,10 @@ function Drawernev() {
       <Drawer.Screen name="Review" component={Review} />
 
       <Drawer.Screen name="About" component={About} />
+
+      <Drawer.Screen name="AgencyHomeScreen" component={AgencyHomeScreen} />
+
+      <Drawer.Screen name="TgHomeScreen" component={TgHomeScreen} />
 
       <Drawer.Screen name="Tripbooking" component={Tripbooking} />
     </Drawer.Navigator>

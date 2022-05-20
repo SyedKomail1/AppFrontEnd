@@ -33,7 +33,7 @@ import Category4 from "./Category4.js";
 import Button from "../../components/Button";
 
 const { width } = Dimensions.get("screen");
-const HomeScreen = ({ navigation }) => {
+const TgHomeScreen = ({ navigation }) => {
   const categoryIcons = [
     <Ionicons
       name="home"
@@ -186,8 +186,8 @@ const HomeScreen = ({ navigation }) => {
           }}
         >
           <View style={{ flex: 1 }}>
-            <Text style={style.headerTitle}>Explore the</Text>
-            <Text style={style.headerTitle}>beautiful places</Text>
+            <Text style={style.headerTitle}>Welcome</Text>
+            <Text style={style.headerTitle}>Tour Guide Name</Text>
             <View style={style.inputContainer}>
               <Ionicons name="search" size={28} />
               <TextInput
@@ -197,199 +197,19 @@ const HomeScreen = ({ navigation }) => {
             </View>
           </View>
         </View>
-        <ListCategories />
-
-        <Text
-          style={{
-            fontWeight: "bold",
-            color: COLORS.black,
-            fontWeight: "bold",
-            fontSize: 20,
-            margin: 20,
-          }}
-        >
-          Categories
-        </Text>
-
-        <Category1 />
-        <TouchableOpacity onPress={() => navigation.navigate("TourguideBoard")}>
-          <Text
-            style={{
-              fontWeight: "bold",
-              color: COLORS.primary,
-              fontWeight: "bold",
-              fontSize: 20,
-              marginLeft: 30,
-
-              marginBottom: 30,
-            }}
-          >
-            Hire a Tour Guide
-          </Text>
-        </TouchableOpacity>
-        <Category2 />
-        <TouchableOpacity onPress={() => navigation.navigate("TourguideBoard")}>
-          <Text
-            style={{
-              fontWeight: "bold",
-              color: COLORS.primary,
-              fontWeight: "bold",
-              fontSize: 20,
-              marginLeft: 30,
-
-              marginBottom: 30,
-            }}
-          >
-            Rent a Vehicle
-          </Text>
-        </TouchableOpacity>
-        <Category3 />
-        <TouchableOpacity onPress={() => navigation.navigate("TourguideBoard")}>
-          <Text
-            style={{
-              fontWeight: "bold",
-              color: COLORS.primary,
-              fontWeight: "bold",
-              fontSize: 20,
-              marginLeft: 30,
-
-              marginBottom: 30,
-            }}
-          >
-            Estimate Your Budget
-          </Text>
-        </TouchableOpacity>
-        <Category4 />
-
-        <TouchableOpacity onPress={() => navigation.navigate("TourguideBoard")}>
-          <Text
-            style={{
-              fontWeight: "bold",
-              color: COLORS.primary,
-              fontWeight: "bold",
-              fontSize: 20,
-              marginLeft: 30,
-
-              marginBottom: 30,
-            }}
-          >
-            Get your Tour Planned
-          </Text>
-        </TouchableOpacity>
 
         <View
           style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            marginHorizontal: 20,
-            paddingTop: 20,
-            paddingBottom: 20,
+            marginTop: 50,
           }}
         >
-          <Text
-            style={{
-              fontWeight: "bold",
-              color: COLORS.black,
-              fontWeight: "bold",
-              fontSize: 20,
-            }}
-          >
-            Top Tours
-          </Text>
-          <View style={style.container}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("TopToursScreen")}
-            >
-              <Text style={style.textPart2}>Show All</Text>
-            </TouchableOpacity>
-          </View>
+          {/* <Button
+            title="Create Tour"
+            onPress={() => navigation.navigate("CreateTour")}
+          /> */}
         </View>
-        <View>
-          <TopTours />
 
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginHorizontal: 20,
-              paddingTop: 20,
-              paddingBottom: 20,
-            }}
-          >
-            <Text
-              style={{
-                fontWeight: "bold",
-                color: COLORS.black,
-                fontWeight: "bold",
-                fontSize: 20,
-              }}
-            >
-              Low Cost Tours
-            </Text>
-            <View style={style.container}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("TopToursScreen")}
-              >
-                <Text style={style.textPart2}>Show All</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-
-          <TopTours1 />
-
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginHorizontal: 20,
-              paddingTop: 20,
-              paddingBottom: 20,
-            }}
-          >
-            <Text
-              style={{
-                fontWeight: "bold",
-                color: COLORS.black,
-                fontWeight: "bold",
-                fontSize: 20,
-              }}
-            >
-              Recommended
-            </Text>
-            <View style={style.container}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("TopToursScreen")}
-              >
-                <Text style={style.textPart2}>Show All</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-
-          <TopTours2 />
-        </View>
-        <Button
-          title="Create Tour"
-          onPress={() => navigation.navigate("CreateTour")}
-        />
-
-        <Button
-          title="Contact us"
-          onPress={() => navigation.navigate("Contact")}
-        />
-
-        <Button title="About" onPress={() => navigation.navigate("About")} />
-
-        <Button title="Review" onPress={() => navigation.navigate("Review")} />
-
-        <Button
-          title="AgencyHomeScreen"
-          onPress={() => navigation.navigate("AgencyHomeScreen")}
-        />
-
-        <Button
-          title="TgHomeScreen"
-          onPress={() => navigation.navigate("TgHomeScreen")}
-        />
+        <Text style={style.headerTitle1}>Order Requests </Text>
       </ScrollView>
     </SafeAreaView>
   );
@@ -406,6 +226,12 @@ const style = StyleSheet.create({
   headerTitle: {
     color: COLORS.white,
     fontWeight: "bold",
+    fontSize: 23,
+  },
+  headerTitle1: {
+    color: COLORS.black,
+    fontWeight: "bold",
+    marginLeft: 10,
     fontSize: 23,
   },
   textPart2: {
@@ -473,4 +299,4 @@ const style = StyleSheet.create({
     padding: 10,
   },
 });
-export default HomeScreen;
+export default TgHomeScreen;
